@@ -34,7 +34,6 @@ class HomeAdapter(private val context: Context, private val itemList: List<HomeD
         holder.map.setImageResource(item.map)
 
         // 마지막 항목일 경우 구분선 X
-        val isLastItem = position == itemList.size - 1
         if(position<itemList.size-1)
             holder.divider.visibility = View.VISIBLE
         else
