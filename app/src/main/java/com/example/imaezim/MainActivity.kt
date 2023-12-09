@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.imaezim.databinding.ActivityMainBinding
 import com.example.imaezim.retrofit.User
 import com.example.imaezim.retrofit.UserService
-import com.example.projecttest.retrofit.RetrofitClient
+import com.example.imaezim.retrofit.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                                 //Toast.makeText(this@MainActivity, "로그인 성공!!!", Toast.LENGTH_SHORT).show()
 
                                 //로그인 성공시 화면 전환
-                                val intent = Intent(this@MainActivity, JoinActivity::class.java)
+                                val intent = Intent(this@MainActivity, HomeActivity::class.java)
                                 startActivity(intent)
                                 return
                             } else {

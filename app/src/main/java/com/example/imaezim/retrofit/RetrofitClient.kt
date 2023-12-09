@@ -1,4 +1,4 @@
-package com.example.projecttest.retrofit
+package com.example.imaezim.retrofit
 
 import android.util.Log
 import okhttp3.OkHttpClient
@@ -19,7 +19,7 @@ object RetrofitClient {
 
         if(retrofitClient == null){
             retrofitClient = Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8000")
+                .baseUrl("http://127.0.0.1:8000")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(clientBuilder.build())
                 .build()

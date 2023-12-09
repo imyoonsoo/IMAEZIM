@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.example.imaezim.databinding.ActivityJoinBinding
 import com.example.imaezim.retrofit.User
 import com.example.imaezim.retrofit.UserService
-import com.example.projecttest.retrofit.RetrofitClient
+import com.example.imaezim.retrofit.RetrofitClient
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,13 +30,11 @@ class JoinActivity : AppCompatActivity() {
             var password_input2 = binding.joinPassword2.text.toString()
             var nickname_input = binding.joinNickname.text.toString()
 
-
             if (nickname_input == "") Toast.makeText(this@JoinActivity, "닉네임 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (email_input == "") Toast.makeText(this@JoinActivity, "이메일 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (password_input == "") Toast.makeText(this@JoinActivity, "비밀번호 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (password_input2 == "") Toast.makeText(this@JoinActivity, "비밀번호 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (password_input != password_input2) Toast.makeText(this@JoinActivity, "비밀번호가  일치하지않습니다", Toast.LENGTH_SHORT).show()
-            else if (nickname_input == "") Toast.makeText(this@JoinActivity, "닉네임 입력해주세요", Toast.LENGTH_SHORT).show()
             else if (true) {
                 //Toast.makeText(this@JoinActivity, "성공", Toast.LENGTH_SHORT).show()
                 val UserService = RetrofitClient.getClient()?.create(UserService::class.java)
@@ -85,7 +83,7 @@ class JoinActivity : AppCompatActivity() {
 
                                 //회원가입 & 회원가입한 user 정보 얻기 성공시 페이지 이동
                                 //로그인 성공시 화면 전환
-                                val intent = Intent(this@JoinActivity, JoinActivity::class.java)
+                                val intent = Intent(this@JoinActivity, HomeActivity::class.java)
                                 startActivity(intent)
                             }
                             override fun onFailure(call: Call<List<User>>, t: Throwable) {
