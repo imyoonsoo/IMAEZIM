@@ -4,7 +4,8 @@ data class MyFeedData(
     val image: Int = 0,
     val video: Int = 0,
     val audio: Int = 0,
-    val map: Int
+    val map: Int,
+    val time : String,
 ) {
     enum class MemoType {
         TEXT, IMAGE, VIDEO, AUDIO
